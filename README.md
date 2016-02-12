@@ -1,10 +1,10 @@
-# webcoin-bitcoin
+# webcoin-bitcoin-testnet
 
-[![npm version](https://img.shields.io/npm/v/webcoin-bitcoin.svg)](https://www.npmjs.com/package/webcoin-bitcoin)
-[![Dependency Status](https://david-dm.org/mappum/webcoin-bitcoin.svg)](https://david-dm.org/mappum/webcoin-bitcoin)
+[![npm version](https://img.shields.io/npm/v/webcoin-bitcoin-testnet.svg)](https://www.npmjs.com/package/webcoin-bitcoin-testnet)
+[![Dependency Status](https://david-dm.org/mappum/webcoin-bitcoin-testnet.svg)](https://david-dm.org/mappum/webcoin-bitcoin-testnet)
 
-**Bitcoin constants and network rules to use with [Webcoin](https://github.com/mappum/webcoin)**
+**Bitcoin testnet 3 parameters for [webcoin](https://github.com/mappum/webcoin)**
 
 ## Usage
 
-`npm install webcoin-bitcoin`
+`npm install webcoin-bitcoin-testnet`
