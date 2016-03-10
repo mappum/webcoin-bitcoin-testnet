@@ -6,9 +6,17 @@ var dnsSeeds = [
   'testnet-seed.bluematt.me',
   'testnet-seed.bitcoin.schildbach.de'
 ]
+var webSeeds = [
+  'us-west.seed.webcoin.io:8193',
+  'us-east.seed.webcoin.io:8193',
+  'eu.seed.webcoin.io:8193',
+  'asia.seed.webcoin.io:8193'
+  // TODO: add more
+]
 
 module.exports = {
   magic,
   defaultPort,
-  dnsSeeds
+  dnsSeeds,
+  webSeeds
 }
