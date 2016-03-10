@@ -1,8 +1,5 @@
-var bitcoin = require('webcoin-bitcoin').net
-
 var magic = 0x0709110b
 var defaultPort = 18333
-var protocolVersion = 70002
 
 var dnsSeeds = [
   'testnet-seed.bitcoin.petertodd.org',
@@ -10,9 +7,8 @@ var dnsSeeds = [
   'testnet-seed.bitcoin.schildbach.de'
 ]
 
-Object.assign(exports, bitcoin, {
+module.exports = {
   magic,
   defaultPort,
-  protocolVersion,
   dnsSeeds
-})
+}

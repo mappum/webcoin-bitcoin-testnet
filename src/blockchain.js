@@ -24,30 +24,40 @@ function calculateTarget (block, chain, cb) {
   if (block.height % this.interval === 0) {
     return bitcoin.calculateTarget.call(this, block, chain, cb)
   }
+
   chain.getBlock(block.header.prevHash, (err, prev) => {
     if (err) return cb(err)
+
     var timeDelta = block.header.timestamp - prev.header.timestamp
     if (timeDelta > this.targetSpacing * 2) {
+      // the network didn't find a block in time, so lower difficulty to minimum
       return cb(null, chain.maxTarget())
     }
 
-    var traverse = (err, prev) => {
+    // the difficulty is whatever is in the last non-mindiff block
+    traverseToRealDifficulty.call(this, block, chain, (err, prev) => {
       if (err) return cb(err)
-      var onInterval = prev.height % this.interval === 0
-      if (onInterval || prev.header.bits !== this.genesisHeader.bits) {
-        return cb(null, u.expandTarget(prev.header.bits))
-      }
-      chain.getBlock(prev.header.prevHash, traverse)
-    }
-    traverse(null, prev)
+      cb(null, u.expandTarget(prev.header.bits))
+    })
   })
 }
 
-// inherit from bitcoin mainnet params
-module.exports = Object.assign({}, bitcoin, {
-  genesisHeader,
-  checkpoints: null,
+// traverse to last real difficulty block (not a mindiff timeout blocks)
+function traverseToRealDifficulty (block, chain, cb) {
+  var traverse = (err, prev) => {
+    if (err) return cb(err)
+    var onInterval = prev.height % this.interval === 0
+    if (onInterval || prev.header.bits !== this.genesisHeader.bits) {
+      return cb(null, prev)
+    }
+    chain.getBlock(prev.header.prevHash, traverse)
+  }
+  chain.getBlock(block.header.prevHash, traverse)
+}
 
+module.exports = {
+  genesisHeader,
   shouldRetarget,
-  calculateTarget
-})
+  calculateTarget,
+  traverseToRealDifficulty
+}
