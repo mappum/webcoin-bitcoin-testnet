@@ -21,14 +21,14 @@
   "license": "MIT",
   "dependencies": {
     "bitcoin-util": "^2.0.0",
-    "webcoin-bitcoin": "^0.2.2"
+    "webcoin-bitcoin": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.4.5",
     "babel-preset-es2015": "^6.3.13",
-    "faucet": "0.0.1",
+    "faucet": "^0.0.1",
     "standard": "^6.0.8",
     "tape": "^4.5.1",
-    "webcoin-param-tests": "0.0.2"
+    "webcoin-param-tests": "^0.0.3"
   }
 }
