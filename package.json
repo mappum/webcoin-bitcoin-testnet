@@ -1,6 +1,6 @@
 {
   "name": "webcoin-bitcoin-testnet",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Bitcoin testnet parameters for webcoin",
   "main": "index.js",
   "scripts": {
