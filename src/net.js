@@ -7,10 +7,10 @@ var dnsSeeds = [
   'testnet-seed.bitcoin.schildbach.de'
 ]
 var webSeeds = [
-  'us-west.seed.webcoin.io:8193',
-  'us-east.seed.webcoin.io:8193',
-  'eu.seed.webcoin.io:8193',
-  'asia.seed.webcoin.io:8193'
+  'wss://us-west.seed.webcoin.io:8193',
+  'wss://us-east.seed.webcoin.io:8193',
+  'wss://eu.seed.webcoin.io:8193',
+  'wss://asia.seed.webcoin.io:8193'
   // TODO: add more
 ]
 
