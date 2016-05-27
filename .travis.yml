@@ -9,7 +9,7 @@ env:
   - NODE=4
   - BROWSER=chrome
   - BROWSER=firefox
-  - BROWSER=safari
+  # - BROWSER=safari
   - BROWSER=android
   - BROWSER=iphone
   global:
