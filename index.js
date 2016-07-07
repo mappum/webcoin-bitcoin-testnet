@@ -4,5 +4,6 @@ var extend = require('webcoin-bitcoin')
 module.exports = extend({
   blockchain: require('./lib/blockchain.js'),
   net: require('./lib/net.js'),
-  wallet: require('./lib/wallet.js')
+  wallet: require('./lib/wallet.js'),
+  versionbits: require('./lib/versionbits.js')
 })
